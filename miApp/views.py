@@ -62,4 +62,12 @@ def ingresar_amigo(request):
  
 def buscar_amigos(request):
    
-    return render (request, 'buscar_amigos.html')
+   if request.GET.get('nombre', False):
+      nombre = request.GET['nombre']
+      amigos = Amigos.objects.filter(nombre__icontains=nombre)
+      
+      return render(request, 'buscar_amigos.html', {'amigos': amigos})
+   else:
+      respuesta = 'No hay datos'
+   
+   return render (request, 'buscar_amigos.html', {'respuesta': respuesta})

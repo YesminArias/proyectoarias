@@ -2,5 +2,20 @@
 
     <input type="text" name="nombre" id="nombre">
     <input type="submit" value="Buscar">
-    
+
 </form>
+
+{% if amigos %}
+
+    <ul>
+    {% for amigo in amigos %}
+
+        <li>Mi amigo {{ amigo.nombre }} {{ amigo.apellido }} con email {{amigo.email}}</li>
+
+    {% endfor %}
+
+    </ul>
+
+{% else %}
+    <p>No hay Datos</p>
+{% endif %}
