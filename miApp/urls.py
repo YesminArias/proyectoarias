@@ -8,5 +8,5 @@ urlpatterns = [
     path('/compañeros',mostrar_compañeros, name='compañeros'),
     path('', mostrar_inicio, name='inicio'),
     path('ingresar_amigo/', ingresar_amigo, name='ingresar_amigo'),
-     path('buscar_amigos', buscar_amigos, name='buscar_amigos')
+     path('buscar_amigos/', buscar_amigos, name='buscar_amigos')
 ]
